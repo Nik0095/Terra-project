@@ -1,0 +1,30 @@
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# Резервные/временные файлы редакторов
+*.log
+*.tmp
+*.swp
+*.bak
+*.backup
+
+# VS Code и другие IDE
+.vscode/
+.idea/
+
+# Кэш браузера / локальные данные
+.cache/
+*.local
+
+# Файлы FTP/конфигурации сервера
+ftpconfig
+sftp-config.json
+
+# MacOS
+__MACOSX/
+
+# Windows
+ehthumbs.db
+desktop.ini
+
