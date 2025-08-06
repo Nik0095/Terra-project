@@ -1,0 +1,153 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body, html {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+  /* background: linear-gradient(135deg, rgba(67, 162, 208, 1) 0%, rgba(85, 17, 56, 1) 100%); */
+    font-family: 'Arial', sans-serif;
+  scroll-behavior: smooth;  
+}
+
+.footer .back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  background-color: #0088ff;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  line-height: 48px;
+  text-decoration: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background-color 0.3s, transform 0.3s;
+  z-index: 1000;
+  border: 1px solid #fbfb02;
+}
+
+.back-to-top:hover {
+  background-color: #0066cc;
+  transform: translateY(-3px);
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+.footer {
+  position: relative;
+  background-image: url('/img/homebackground.jpg');
+  background-size: cover;
+  background-position-y: top;
+  background-size: cover;
+  background-position: center;
+  color: #ddd;
+  margin-top: 80px;
+  padding: 40px 20px 20px;
+  font-size: 0.95rem;
+  overflow: hidden;
+  border-top: 1px solid #fbfb02;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.27); /* степень затемнения */
+  z-index: 0;
+}
+
+.footer > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+.footer a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr;
+}
+
+/* ≥500px: 2 колонки  */
+@media (min-width: 500px) {
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ≥768px: 2 колонки  */
+@media (min-width: 768px) {
+  .footer__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ≥1024px: 3 колонки */
+@media (min-width: 1024px) {
+  .footer__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.footer__section {
+  flex: 1;
+}
+
+.footer__title {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__list li {
+  margin-bottom: 10px;
+}
+
+.footer__social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.footer__social-links a {
+  font-size: 1.5rem;
+}
+
+.footer__bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 0.85rem;
+  color: #aaa;
+}

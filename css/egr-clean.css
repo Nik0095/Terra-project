@@ -1,0 +1,56 @@
+ .egr-cleaning .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .feature__title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #dd3939;
+        font-weight: bold;
+        /* text-transform: uppercase; */
+    }
+
+    .feature__subtitle {
+        display: block;
+        color: #e6d30a;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+
+    .egr-cleaning__content {
+        flex: 1 1 500px;
+        margin-bottom: 1rem;
+        line-height: 1.6;
+        color: #ffffff;
+        font-size: 1.2rem;
+    }
+
+    .egr-cleaning__image {
+        flex: 1 1 400px;
+        text-align: center;
+    }
+
+    .egr-cleaning__image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .feature__list {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 1rem;
+         color: rgb(227, 214, 31);
+    }
+
+    .feature__list li {
+        margin: 0.5rem 0;
+        font-weight: 500;
+    }
