@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Як працює очищення DPF TerraClean</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/cndk.beforeafter.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/socialfloating.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="css/style2.css" rel="stylesheet">
+
+    <style>
+        /* body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1f2937 0%, #4b5563 100%);
+            min-height: 100vh;
+        }*/
+
+        .container-blog {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .main-post {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: clamp(20px, 5vw, 40px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .post-title {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: bold;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ce413e, #f6c711);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .post-meta {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .post-image {
+            width: 100%;
+            height: clamp(200px, 30vw, 300px);
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"><rect fill="%23e5e7eb" width="800" height="400"/><text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="%236b7280" font-size="24">DPF TerraClean Image</text></svg>') center/cover no-repeat;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .post-content p {
+            margin-bottom: 20px;
+        }
+
+        .post-content h2 {
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            margin-top: 40px;
+            margin-bottom: 15px;
+            color: #058aca;
+        }
+
+        .post-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .cta {
+            margin-top: 50px;
+            padding: clamp(20px, 4vw, 30px);
+            background: #9195a5;
+            color: white;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+        }
+
+        .cta a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            background: white;
+            color: #667eea;
+            border-radius: 10px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta a:hover {
+            background: #e0e7ff;
+            transform: translateY(-2px);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: sticky;
+            top: 20px;
+        }
+
+        .sidebar-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .sidebar-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .recent-posts li,
+        .categories li {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        .recent-posts li a,
+        .categories li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            padding: 5px 0;
+        }
+
+        .recent-posts li a:hover,
+        .categories li a:hover {
+            color: #058aca;
+        }
+
+        .post-date,
+        .category-count {
+            font-size: 0.85em;
+            color: #777;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #e0e7ff;
+            color: #333;
+            padding: 6px 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: background 0.3s ease;
+        }
+
+        .tag:hover {
+            background: #c7d2fe;
+        }
+
+        .video-section__video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .sidebar-close {
+            position: absolute;
+            display: none;
+            /* top: 20px;
+                right: 20px;
+                background: none;
+                border: none;
+                font-size: 24px;
+                color: #666;
+                cursor: pointer;
+                padding: 8px;
+                border-radius: 50%;
+                transition: all 0.3s ease; */
+        }
+
+        /* Tablet styles */
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr 280px;
+                gap: 25px;
+                padding: 15px;
+            }
+
+            .main-post {
+                padding: clamp(20px, 4vw, 30px);
+            }
+
+            .sidebar {
+                position: static;
+            }
+        }
+
+        /* Mobile toggle button */
+        .sidebar-toggle {
+            display: none;
+            position: fixed;
+            top: 90px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: none;
+            border-radius: 15px;
+            padding: 12px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .sidebar-toggle.hidden {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(10px);
+        }
+
+        .sidebar-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar-toggle .icon {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        /* Mobile overlay */
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .sidebar-overlay.active {
+            opacity: 1;
+        }
+
+        /* Mobile landscape and small tablet */
+        @media (max-width: 768px) {
+            .container-blog {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 15px;
+                padding-top: 80px;
+            }
+
+            .sidebar-toggle {
+                display: flex;
+                align-items: center;
+            }
+
+            .sidebar {
+                position: fixed;
+                top: 90px;
+                right: -100%;
+                width: 90%;
+                max-width: 400px;
+                height: 100vh;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                z-index: 999;
+                padding: 80px 20px 20px 20px;
+                overflow-y: auto;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .sidebar.active {
+                right: 0;
+            }
+
+            .sidebar-close {
+                position: absolute;
+                display: block;
+                top: 20px;
+                right: 20px;
+                background: none;
+                border: none;
+                font-size: 24px;
+                color: #666;
+                cursor: pointer;
+                padding: 8px;
+                border-radius: 50%;
+                transition: all 0.3s ease;
+            }
+
+            .sidebar-close:hover {
+                background: rgba(0, 0, 0, 0.1);
+                color: #333;
+            }
+
+            .main-post {
+                order: 1;
+            }
+
+            .post-title {
+                text-align: center;
+            }
+
+            .video-section__video {
+                max-height: 200px;
+                object-fit: cover;
+            }
+        }
+
+        /* Mobile portrait */
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+                gap: 15px;
+            }
+
+            .sidebar {
+                grid-template-columns: 1fr;
+            }
+
+            .main-post {
+                padding: 20px;
+                border-radius: 15px;
+            }
+
+            .post-image {
+                border-radius: 10px;
+            }
+
+            .cta {
+                padding: 20px;
+                margin-top: 30px;
+            }
+
+            .tags {
+                gap: 5px;
+            }
+
+            .tag {
+                padding: 4px 8px;
+                font-size: 0.8rem;
+            }
+
+            .sidebar-section {
+                padding: 15px;
+            }
+        }
+
+        /* Large screens */
+        @media (min-width: 1400px) {
+            .container {
+                grid-template-columns: 1fr 350px;
+                gap: 40px;
+            }
+        }
+
+        /* Ultra-wide screens */
+        @media (min-width: 1800px) {
+            .container {
+                grid-template-columns: 1fr 400px;
+                max-width: 1600px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .main-post {
+                box-shadow: none;
+                background: white;
+            }
+
+            .cta {
+                background: #f5f5f5;
+                color: black;
+            }
+        }
+
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi) {
+            .post-image {
+                background-size: cover;
+            }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .cta a {
+                transition: none;
+            }
+
+            .tag {
+                transition: none;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+
+            .main-post,
+            .sidebar-section {
+                background: rgba(31, 41, 55, 0.95);
+                color: #e5e7eb;
+            }
+
+            .sidebar-toggle {
+                background: rgba(31, 41, 55, 0.95);
+                color: #e5e7eb;
+            }
+
+            .sidebar {
+                background: rgba(31, 41, 55, 0.98);
+            }
+
+            .sidebar-close {
+                color: #9ca3af;
+            }
+
+            .sidebar-close:hover {
+                background: rgba(255, 255, 255, 0.1);
+                color: #e5e7eb;
+            }
+
+            .post-title {
+                background: linear-gradient(135deg, #ef4444, #fbbf24);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            .post-content h2 {
+                color: #60a5fa;
+            }
+
+            .recent-posts li a,
+            .categories li a {
+                color: #e5e7eb;
+            }
+
+            .recent-posts li a:hover,
+            .categories li a:hover {
+                color: #60a5fa;
+            }
+
+            .tag {
+                background: #374151;
+                color: #e5e7eb;
+            }
+
+            .tag:hover {
+                background: #4b5563;
+            }
+        }
+    </style>
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
+            const sidebarClose = document.getElementById('sidebar-close');
+
+            function openSidebar() {
+                sidebar.classList.add('active');
+                sidebarOverlay.style.display = 'block';
+                sidebarOverlay.classList.add('active');
+                sidebarToggle.classList.add('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeSidebar() {
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+                sidebarToggle.classList.remove('hidden');
+                document.body.style.overflow = 'auto';
+                setTimeout(() => {
+                    sidebarOverlay.style.display = 'none';
+                }, 300);
+            }
+
+            sidebarToggle.addEventListener('click', openSidebar);
+            sidebarClose.addEventListener('click', closeSidebar);
+            sidebarOverlay.addEventListener('click', closeSidebar);
+
+            // Close sidebar on escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                    closeSidebar();
+                }
+            });
+
+            // Close sidebar when screen size changes to desktop
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 768 && sidebar.classList.contains('active')) {
+                    closeSidebar();
+                }
+            });
+        });
+    </script> -->
+</head>
+
+<body>
+    <header class="site-header initial-hide">
+        <div class="container pt-4">
+
+            <div class="header__container">
+                <a href="index.html" class="header__logo">
+                    <img src="img/2009-TerraClean-Logo-white.png" alt="" " class=" logo" /></a>
+                <!-- Ozmenu -->
+                <div class="menu-open"><span class="open"></span></div>
+                <div class="ozmenu mt-4">
+                    <div class="menu-close"><span class="close"></span></div>
+                    <ul class="ozmenu-nav">
+                        <li class="item"><a href="/">Головна</a></li>
+                        <li class="item"><a href="arhiv2.html">Продукти</a></li>
+                        <li class="item"><a href="gallery2.html">Галерея</a></li>
+                        <li class="item dropdownitem">
+                            <a href="#" class="nav-dropdown">Як працює TerraClean</a>
+                            <div class="dropdown">
+                                <ul>
+                                    <li class="item"><a href="single-post.html">Як працює очищення DPF</a></li>
+                                    <li class="item"><a href="dekarbonizer.html">Як працює очищення від вуглецю</a></li>
+                                    <li class="item"><a href="#">Як працює очищення двигуна з прямим уприскуванням </a>
+                                    </li>
+                                    <li class="item"><a href="#">Часті Питання </a></li>
+                                    <li class="item dropdownitem">
+                                        <a href="#" class="nav-dropdown">Сервіси</a>
+                                        <div class="dropdown">
+                                            <ul>
+                                                <li class="item"><a href="#">Дизель</a></li>
+                                                <li class="item"><a href="#">Бензин</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- <li class="item dropdownitem">
+                  <a href="#" class="nav-dropdown">Питання</a>
+                  <div class="dropdown">
+                    <ul>
+                      <li class="item"><a href="#">Corporate Web Design</a></li>
+                      <li class="item dropdownitem">
+                        <a href="#" class="nav-dropdown">E-Commerce</a>
+                        <div class="dropdown">
+                          <ul>
+                            <li class="item"><a href="#">Ready E-Commerce</a></li>
+                            <li class="item"><a href="#">Custom E-Commerce</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="item dropdownitem">
+                        <a href="#" class="nav-dropdown">Personal Web Design</a>
+                        <div class="dropdown">
+                          <ul>
+                            <li class="item"><a href="#">Blog Site</a></li>
+                            <li class="item"><a href="#">Portfolio Site</a></li>
+                            <li class="item"><a href="#">Custom Personal Site</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="item"><a href="#">Custom Web Design</a></li>
+                      <li class="item"><a href="#">Onepage Web Design</a></li>
+                    </ul>
+                  </div>
+                </li> -->
+
+                        <li class="item dropdownitem">
+                            <a href="#" class="nav-dropdown">
+                                Контакти
+                            </a>
+                            <div class="dropdown">
+                                <ul>
+                                    <li class="item"><a href="#">Блог</a></li>
+                                    <li class="item"><a href="#">Про нас</a></li>
+                                    <li class="item"><a href="#">Admin Panel</a></li>
+                                </ul>
+
+                            </div>
+                        </li>
+                        <!-- реєстрація юзера -->
+                        <li class="item dropdownitem">
+                            <a href="#" class="nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    fill="rgba(253,0,0,1)" width="20" height="20">
+                                    <path
+                                        d="M14 14.252V22H4C4 17.5817 7.58172 14 12 14C12.6906 14 13.3608 14.0875 14 14.252ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM18 17V14H20V17H23V19H20V22H18V19H15V17H18Z">
+                                    </path>
+                                </svg></a>
+                            <div class="dropdown dropdown-left">
+                                <ul>
+                                    <li class="item"><a href="register-form.html"><i class="fas fa-user-plus">
+                                                Реєстрація</i></a></li>
+                                    <li class="item"><a href="#"><i class="fas fa-right-to-bracket"> Увійти</i></a></li>
+                                    <li class="item"><a href="#"><i class="fas fa-user-circle"> Кабінет</i></a></li>
+                                    <li class="item"><a href="#"><i class="fas fa-right-from-bracket"> Вийти</i></a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </li>
+                        <!-- реєстрація юзера -->
+                    </ul>
+                </div>
+            </div> <!-- /Ozmenu -->
+        </div>
+    </header>
+    <!-- Mobile sidebar toggle button -->
+    <button id="sidebar-toggle" class="sidebar-toggle">
+        <span class="icon">☰</span>
+        Меню блогу
+    </button>
+
+    <!-- Sidebar overlay for mobile -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <div class="container-blog">
+        <!-- Основний пост -->
+        <div class="main-post">
+            <h1 class="post-title">Як працює очищення DPF TerraClean</h1>
+            <div class="post-meta">Опубликовано: 5 липня 2025 · Категорія: Технології</div>
+            <div class="post-image"></div>
+
+            <div class="post-content">
+                <p><strong>TerraClean</strong> добре відома своїми послугами з профілактичного очищення паливної
+                    системи.
+                    Особливо для власників дизельних авто компанія пропонує додаткові послуги — зокрема очищення сажових
+                    фільтрів (DPF), які відіграють ключову роль в зниженні викидів та захисті довкілля.</p>
+
+                <p>Процедура допомагає вирішити типову проблему: забитий фільтр через сажу або золу. Це часто спричинено
+                    несправністю інших компонентів або стилем водіння.</p>
+
+                <h2>Що таке DPF?</h2>
+                <p>DPF (Diesel Particulate Filter) — це фільтр, встановлений у вихлопній системі дизельного автомобіля.
+                    Його мета — уловлювати частинки сажі з вихлопних газів і зменшувати шкідливі викиди.</p>
+
+                <p>Зі вступом стандарту <strong>Євро 5</strong> у 2009 році DPF став обов'язковим на всіх нових
+                    дизельних авто. Він очищується самостійно через процес регенерації, що активується під час тривалого
+                    руху на високих температурах.</p>
+
+                <h2>Чому виникають проблеми з DPF?</h2>
+                <p>У міських умовах, при коротких поїздках або через інші несправності двигуна, DPF не встигає
+                    регенеруватись. У результаті — фільтр забивається, знижується потужність, зростає витрата палива,
+                    і з'являються помилки на панелі приладів.</p>
+
+                <h2>Як TerraClean допомагає?</h2>
+                <p>Якщо регенерація більше не працює — потрібна глибока очистка. TerraClean використовує спеціальний
+                    інструмент та хімію, яка видаляє сажу та золу навіть з глибини фільтра.</p>
+
+                <p>Процедура доступна в більшості сервісних центрів або у мобільних інженерів. Техніки TerraClean
+                    проходять навчання та мають повну технічну підтримку, що гарантує безпечне та ефективне очищення.
+                </p>
+
+                <h2>Чи потрібно видаляти DPF?</h2>
+                <p><strong>Ні.</strong> Видалення DPF незаконне і може призвести до високих штрафів та втрати гарантії.
+                    Крім того, дешеві замінники часто не відповідають стандартам і швидко засмічуються.</p>
+
+                <p>Набагато вигідніше підтримувати свій фільтр у справному стані. TerraClean — це надійна профілактика
+                    без шкоди для вашого авто.</p>
+            </div>
+
+            <div class="cta">
+                <h2>Ваше авто потребує обслуговування EGR, DPF, системи подачі палива?</h2>
+                <a href="/contact">Зв'язатись з нами</a>
+                <p>Професійне очищення та обслуговування з TerraClean — надійне рішення.</p>
+            </div>
+        </div>
+
+        <!-- Сайдбар -->
+        <div id="sidebar" class="sidebar">
+            <button id="sidebar-close" class="sidebar-close">×</button>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Останні дописи</h3>
+                <ul class="recent-posts">
+                    <li>
+                        <a href="#">Як працює очищення DPF TerraClean</a>
+                        <div class="post-date">5 липня 2025</div>
+                    </li>
+                    <li>
+                        <a href="#">Очищення системи EGR</a>
+                        <div class="post-date">3 липня 2025</div>
+                    </li>
+                    <li>
+                        <a href="#">Профілактика паливної системи</a>
+                        <div class="post-date">1 липня 2025</div>
+                    </li>
+                    <li>
+                        <a href="#">Діагностика дизельного двигуна</a>
+                        <div class="post-date">28 червня 2025</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Відео</h3>
+                <video class="video-section__video" controls
+                    poster="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect fill='%23374151' width='300' height='200'/><polygon fill='%23fff' points='120,75 120,125 180,100'/><text x='150' y='150' text-anchor='middle' fill='%23fff' font-size='14'>TerraClean Video</text></svg>">
+                    <source src="#" type="video/mp4">
+                    Ваш браузер не підтримує відтворення відео.
+                </video>
+
+                <h3 class="sidebar-title">Відео Очищення EGR</h3>
+                <video class="video-section__video" controls
+                    poster="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect fill='%23374151' width='300' height='200'/><polygon fill='%23fff' points='120,75 120,125 180,100'/><text x='150' y='150' text-anchor='middle' fill='%23fff' font-size='14'>EGR Cleaning</text></svg>">
+                    <source src="#" type="video/mp4">
+                    Ваш браузер не підтримує відтворення відео.
+                </video>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Категорії</h3>
+                <ul class="categories">
+                    <li><a href="#">Технології <span class="category-count">12</span></a></li>
+                    <li><a href="#">Обслуговування <span class="category-count">8</span></a></li>
+                    <li><a href="#">Діагностика <span class="category-count">5</span></a></li>
+                    <li><a href="#">Поради <span class="category-count">6</span></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Популярні теги</h3>
+                <div class="tags">
+                    <a href="#" class="tag">DPF</a>
+                    <a href="#" class="tag">EGR</a>
+                    <a href="#" class="tag">TerraClean</a>
+                    <a href="#" class="tag">Дизель</a>
+                    <a href="#" class="tag">Очищення</a>
+                    <a href="#" class="tag">Сервіс</a>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Архів</h3>
+                <ul class="categories">
+                    <li><a href="#">Липень 2025</a></li>
+                    <li><a href="#">Червень 2025</a></li>
+                    <li><a href="#">Травень 2025</a></li>
+                    <li><a href="#">Квітень 2025</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class=" footer">
+        <a href="#top" class="back-to-top" title="Back to top">↑</a>
+        <div class="footer__container">
+            <div class="footer__section footer__logo">
+                <img src="img/2009-TerraClean-Logo-white.png" style="width: 280px;" alt="TerraClean Logo"
+                    class="footer__logo-img">
+            </div>
+            <div class="footer__section footer__contacts">
+                <h4 class="footer__title">Контакти</h4>
+                <ul class="footer__list">
+                    <li><a href="tel:+380000000000">+38 (000) 000-00-00</a></li>
+                    <li><a href="mailto:info@example.com">info@example.com</a></li>
+                    <li>Київ, вул. Прикладна, 1</li>
+                </ul>
+            </div>
+
+            <div class="footer__section footer__navigation">
+                <h4 class="footer__title">Навігація</h4>
+                <ul class="footer__list">
+                    <li><a href="#">Головна</a></li>
+                    <li><a href="#">Послуги</a></li>
+                    <li><a href="#">Про нас</a></li>
+                    <li><a href="#">Контакти</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__section footer__social">
+                <h4 class="footer__title">Ми у соцмережах</h4>
+                <div class="footer__social-links">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2025 Example Company. Всі права захищені.</p>
+        </div>
+    </footer>
+
+
+    <!-- Compare this snippet from index2.html: -->
+    <script src="js/scriptmenu.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery.socialfloating.js"></script>
+    <script src="js/socialfloating.js"></script>
+    <script src="js/blogscript.js"></script>
+    <!-- menu -->
+    <script>
+        // menu ------------
+        let lastScrollY = window.scrollY;
+        const header = document.querySelector('.site-header');
+        const showThreshold = window.innerHeight / 4;
+        let headerRevealed = false;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (!headerRevealed && currentScrollY > showThreshold) {
+                header.classList.remove('initial-hide');
+                headerRevealed = true;
+                lastScrollY = currentScrollY;
+                return;
+            }
+
+            if (headerRevealed) {
+                if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                    header.classList.add('hide');
+                } else {
+                    header.classList.remove('hide');
+                }
+            }
+
+            lastScrollY = currentScrollY;
+        });
+    </script>
+
+
+</body>
+
+</html>
