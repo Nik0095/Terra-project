@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Вхід / Реєстрація</title>
+
+    <!-- Google Identity Services SDK -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            /* background: #f2f2f2; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .auth-box {
+            background: #fff;
+            padding: 30px 25px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 340px;
+        }
+
+        .auth-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .toggle-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .toggle-link a {
+            color: #007bff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="auth-box">
+        <h2 id="form-title">Вхід</h2>
+
+        <!-- Форма входа/регистрации -->
+        <form id="auth-form">
+            <input type="text" id="username" placeholder="Email або ім'я користувача" required>
+            <input type="password" id="password" placeholder="Пароль" required>
+            <input type="password" id="confirm-password" placeholder="Підтвердьте пароль" style="display: none;">
+            <button type="submit" id="submit-btn">Увійти</button>
+        </form>
+
+        <!-- Разделитель -->
+        <hr>
+
+        <!-- Google Sign-In -->
+        <div id="g_id_onload" data-client_id="ВАШ_GOOGLE_CLIENT_ID"
+            data-login_uri="http://localhost:3000/google-auth-callback" data-auto_prompt="false">
+        </div>
+
+        <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="outline" data-text="signin_with"
+            data-size="large" data-logo_alignment="left">
+        </div>
+
+        <!-- Переключение между режимами -->
+        <div class="toggle-link">
+            Ще не маєте акаунта?
+            <a id="toggle-mode">Зареєструватися</a>
+        </div>
+    </div>
+
+    <script>
+        const formTitle = document.getElementById("form-title");
+        const toggleLink = document.getElementById("toggle-mode");
+        const confirmPassword = document.getElementById("confirm-password");
+        const submitBtn = document.getElementById("submit-btn");
+
+        let isRegisterMode = false;
+
+        toggleLink.addEventListener("click", () => {
+            isRegisterMode = !isRegisterMode;
+
+            if (isRegisterMode) {
+                formTitle.textContent = "Реєстрація";
+                confirmPassword.style.display = "block";
+                submitBtn.textContent = "Зареєструватися";
+                toggleLink.textContent = "Увійти";
+            } else {
+                formTitle.textContent = "Вхід";
+                confirmPassword.style.display = "none";
+                submitBtn.textContent = "Увійти";
+                toggleLink.textContent = "Зареєструватися";
+            }
+        });
+
+        document.getElementById("auth-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const confirm = document.getElementById("confirm-password").value;
+
+            if (isRegisterMode && password !== confirm) {
+                alert("Паролі не співпадають");
+                return;
+            }
+
+            alert(isRegisterMode ? `Реєстрація: ${username}` : `Вхід: ${username}`);
+            // Тут можно отправить данные на сервер (через fetch/AJAX)
+        });
+    </script>
+
+</body>
+
+</html>

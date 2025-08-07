@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/cndk.beforeafter.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/socialfloating.css" rel="stylesheet" />
+    <link href="css/title.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="css/style2.css" rel="stylesheet">
+    <title>FAQ — TerraClean</title>
+    <style>
+        .accordion {
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        .accordion-item {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 16px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #e6f0ff;
+            transition: background-color 0.3s;
+        }
+
+        .accordion-header:hover {
+            background-color: #d4e4ff;
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s;
+            font-size: 18px;
+        }
+
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            font-size: 16px;
+            background-color: #ffffff;
+            line-height: 1.5;
+            transition: max-height 0.5s ease;
+        }
+
+        .accordion-content.open {
+            padding: 16px 20px;
+        }
+
+        @media (max-width: 600px) {
+            .accordion-header {
+                font-size: 16px;
+                padding: 12px 16px;
+            }
+
+            .accordion-content {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header initial-hide">
+        <div class="container pt-4">
+
+            <div class="header__container">
+                <a href="index.html" class="header__logo">
+                    <img src="img/2009-TerraClean-Logo-white.png" alt="" " class=" logo" /></a>
+                <!-- Ozmenu -->
+                <div class="menu-open"><span class="open"></span></div>
+                <div class="ozmenu mt-4">
+                    <div class="menu-close"><span class="close"></span></div>
+                    <ul class="ozmenu-nav">
+                        <li class="item"><a href="/">Головна</a></li>
+                        <li class="item"><a href="arhiv2.html">Продукти</a></li>
+                        <li class="item"><a href="gallery2.html">Галерея</a></li>
+                        <li class="item dropdownitem">
+                            <a href="#" class="nav-dropdown">Як працює TerraClean</a>
+                            <div class="dropdown">
+                                <ul>
+                                    <li class="item"><a href="single-post.html">Як працює очищення DPF</a></li>
+                                    <li class="item"><a href="single-post2.html">Як працює очищення від вуглецю</a></li>
+                                    <li class="item"><a href="single-post3.html">Як працює очищення двигуна з прямим
+                                            уприскуванням </a>
+                                    </li>
+                                    <li class="item"><a href="queshin.html">Часті Питання </a></li>
+                                    <li class="item dropdownitem">
+                                        <a href="#" class="nav-dropdown">Сервіси</a>
+                                        <div class="dropdown">
+                                            <ul>
+                                                <li class="item"><a href="#">Дизель</a></li>
+                                                <li class="item"><a href="#">Бензин</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- <li class="item dropdownitem">
+                  <a href="#" class="nav-dropdown">Питання</a>
+                  <div class="dropdown">
+                    <ul>
+                      <li class="item"><a href="#">Corporate Web Design</a></li>
+                      <li class="item dropdownitem">
+                        <a href="#" class="nav-dropdown">E-Commerce</a>
+                        <div class="dropdown">
+                          <ul>
+                            <li class="item"><a href="#">Ready E-Commerce</a></li>
+                            <li class="item"><a href="#">Custom E-Commerce</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="item dropdownitem">
+                        <a href="#" class="nav-dropdown">Personal Web Design</a>
+                        <div class="dropdown">
+                          <ul>
+                            <li class="item"><a href="#">Blog Site</a></li>
+                            <li class="item"><a href="#">Portfolio Site</a></li>
+                            <li class="item"><a href="#">Custom Personal Site</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="item"><a href="#">Custom Web Design</a></li>
+                      <li class="item"><a href="#">Onepage Web Design</a></li>
+                    </ul>
+                  </div>
+                </li> -->
+
+                        <li class="item dropdownitem">
+                            <a href="#" class="nav-dropdown">
+                                Контакти
+                            </a>
+                            <div class="dropdown">
+                                <ul>
+                                    <li class="item"><a href="#">Блог</a></li>
+                                    <li class="item"><a href="#">Про нас</a></li>
+                                    <li class="item"><a href="#">Admin Panel</a></li>
+                                </ul>
+
+                            </div>
+                        </li>
+                        <!-- реєстрація юзера -->
+                        <li class="item dropdownitem">
+                            <a href="#" class="nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    fill="rgba(253,0,0,1)" width="20" height="20">
+                                    <path
+                                        d="M14 14.252V22H4C4 17.5817 7.58172 14 12 14C12.6906 14 13.3608 14.0875 14 14.252ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM18 17V14H20V17H23V19H20V22H18V19H15V17H18Z">
+                                    </path>
+                                </svg></a>
+                            <div class="dropdown dropdown-left">
+                                <ul>
+                                    <li class="item"><a href="register-form.html"><i class="fas fa-user-plus">
+                                                Реєстрація</i></a></li>
+                                    <li class="item"><a href="#"><i class="fas fa-right-to-bracket"> Увійти</i></a></li>
+                                    <li class="item"><a href="#"><i class="fas fa-user-circle"> Кабінет</i></a></li>
+                                    <li class="item"><a href="#"><i class="fas fa-right-from-bracket"> Вийти</i></a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </li>
+                        <!-- реєстрація юзера -->
+                    </ul>
+                </div>
+            </div> <!-- /Ozmenu -->
+        </div>
+    </header>
+    <section class="page-title">
+        <div class="page-title__overlay">
+            <div class="container">
+                <!-- <img src="img/2009-TerraClean-Logo-white.png" alt="TerraClean Logo" class="page-title__logo img-fluid"
+                    style="max-width: 200px;"> -->
+                <h2 class="page-title__heading">Часті питання про TerraClean</h2>
+                <nav class="breadcrumbs">
+                    <a href="/">Головна</a>
+                    <span> / </span>
+                    <a href="#">Послуги</a>
+                    <span> / </span>
+                    <span>Поточна сторінка</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-header">
+                Що таке TerraClean?
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <p>TerraClean — це запатентована технологія очищення двигунів внутрішнього згоряння, яка зменшує
+                    відкладення вуглецю в системі впуску, камерах згоряння, каталізаторах і датчиках. Це покращує
+                    продуктивність, знижує викиди та покращує економію пального.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                Які переваги має TerraClean?
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <ul>
+                    <li>Покращена економія пального</li>
+                    <li>Менше викидів</li>
+                    <li>Краще прискорення та відгук дроселя</li>
+                    <li>Стабільніша робота двигуна</li>
+                </ul>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                Чи підходить TerraClean для дизельних двигунів?
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <p>Так. TerraClean має рішення як для бензинових, так і для дизельних двигунів. Для дизеля також
+                    очищуються системи EGR і DPF, якщо є достатній потік повітря. У разі сильного засмічення DPF
+                    застосовується окрема процедура очищення.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                Що таке TerraClean?
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <p>TerraClean — це запатентована технологія очищення двигунів внутрішнього згоряння, яка зменшує
+                    відкладення вуглецю в системі впуску, камерах згоряння, каталізаторах і датчиках. Це покращує
+                    продуктивність, знижує викиди та покращує економію пального.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                Які переваги має TerraClean?
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <ul>
+                    <li>Покращена економія пального</li>
+                    <li>Менше викидів</li>
+                    <li>Краще прискорення та відгук дроселя</li>
+                    <li>Стабільніша робота двигуна</li>
+                </ul>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                Чи підходить TerraClean для дизельних двигунів?
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <p>Так. TerraClean має рішення як для бензинових, так і для дизельних двигунів. Для дизеля також
+                    очищуються системи EGR і DPF, якщо є достатній потік повітря. У разі сильного засмічення DPF
+                    застосовується окрема процедура очищення.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                Що таке TerraClean?
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <p>TerraClean — це запатентована технологія очищення двигунів внутрішнього згоряння, яка зменшує
+                    відкладення вуглецю в системі впуску, камерах згоряння, каталізаторах і датчиках. Це покращує
+                    продуктивність, знижує викиди та покращує економію пального.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                Які переваги має TerraClean?
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <ul>
+                    <li>Покращена економія пального</li>
+                    <li>Менше викидів</li>
+                    <li>Краще прискорення та відгук дроселя</li>
+                    <li>Стабільніша робота двигуна</li>
+                </ul>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                Чи підходить TerraClean для дизельних двигунів?
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <p>Так. TerraClean має рішення як для бензинових, так і для дизельних двигунів. Для дизеля також
+                    очищуються системи EGR і DPF, якщо є достатній потік повітря. У разі сильного засмічення DPF
+                    застосовується окрема процедура очищення.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class=" footer">
+        <a href="#top" class="back-to-top" title="Back to top">↑</a>
+        <div class="footer__container">
+            <div class="footer__section footer__logo">
+                <img src="img/2009-TerraClean-Logo-white.png" style="width: 280px;" alt="TerraClean Logo"
+                    class="footer__logo-img">
+            </div>
+            <div class="footer__section footer__contacts">
+                <h4 class="footer__title">Контакти</h4>
+                <ul class="footer__list">
+                    <li><a href="tel:+380000000000">+38 (000) 000-00-00</a></li>
+                    <li><a href="mailto:info@example.com">info@example.com</a></li>
+                    <li>Київ, вул. Прикладна, 1</li>
+                </ul>
+            </div>
+
+            <div class="footer__section footer__navigation">
+                <h4 class="footer__title">Навігація</h4>
+                <ul class="footer__list">
+                    <li><a href="#">Головна</a></li>
+                    <li><a href="#">Послуги</a></li>
+                    <li><a href="#">Про нас</a></li>
+                    <li><a href="#">Контакти</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__section footer__social">
+                <h4 class="footer__title">Ми у соцмережах</h4>
+                <div class="footer__social-links">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2025 Example Company. Всі права захищені.</p>
+        </div>
+    </footer>
+
+
+    <!-- Compare this snippet from index2.html: -->
+    <script src="js/scriptmenu.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery.socialfloating.js"></script>
+    <script src="js/socialfloating.js"></script>
+    <script src="js/blogscript.js"></script>
+    <!-- menu -->
+    <script>
+        // menu ------------
+        let lastScrollY = window.scrollY;
+        const header = document.querySelector('.site-header');
+        const showThreshold = window.innerHeight / 4;
+        let headerRevealed = false;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (!headerRevealed && currentScrollY > showThreshold) {
+                header.classList.remove('initial-hide');
+                headerRevealed = true;
+                lastScrollY = currentScrollY;
+                return;
+            }
+
+            if (headerRevealed) {
+                if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                    header.classList.add('hide');
+                } else {
+                    header.classList.remove('hide');
+                }
+            }
+
+            lastScrollY = currentScrollY;
+        });
+    </script>
+
+    <script>
+        document.querySelectorAll(".accordion-header").forEach(header => {
+            header.addEventListener("click", () => {
+                const content = header.nextElementSibling;
+                const isOpen = content.classList.contains("open");
+
+                // Закрити всі інші
+                document.querySelectorAll(".accordion-content").forEach(c => {
+                    c.style.maxHeight = null;
+                    c.classList.remove("open");
+                    c.previousElementSibling.classList.remove("active");
+                });
+
+                // Якщо поточний вже відкритий — закрити
+                if (isOpen) {
+                    content.style.maxHeight = null;
+                    header.classList.remove("active");
+                } else {
+                    content.classList.add("open");
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    header.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
