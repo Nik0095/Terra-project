@@ -24,6 +24,8 @@
   position: relative;
   color: white;
   text-align: center;
+  opacity: 0.8;
+  margin-bottom: 50px;
 }
 
 .page-title__overlay {

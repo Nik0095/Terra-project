@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/title.css" rel="stylesheet">
+
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+
+    <link href="css/socialfloating.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/dpf-clean.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link href="css/style2.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <title>Архів товарів</title>
+
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #1f2937 0%, #4b5563 100%);
+    }
+
+    .quick-view-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1050;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .quick-view-content {
+        max-width: 800px;
+        width: 100%;
+    }
+
+    #productsCount {
+        color: white;
+        font-size: 1.2em;
+        margin-top: 20px;
+    }
+
+    .quick-view-btn {
+        /* position: absolute; */
+        /* bottom: 10px;
+        left: 50%; */
+        /* transform: translateX(-50%); */
+        /* background-color: #007bff; */
+        color: rgb(210, 8, 8);
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .quick-view-btn :hover {
+        background-color: #b30c00da;
+        color: #ffff;
+
+
+    }
+
+    .card-title {
+        cursor: pointer;
+    }
+
+    .pagination {
+        margin-top: 50px;
+        justify-content: center;
+    }
+</style>
+
+
+<body>
+    <section class="page-title">
+        <div class="page-title__overlay">
+            <div class="container">
+                <h2 class="page-title__heading">Продукти TerraClean</h2>
+                <nav class="breadcrumbs">
+                    <a href="/">Головна</a>
+                    <span> / </span>
+                    <a href="#">Послуги</a>
+                    <span> / </span>
+                    <span>Поточна сторінка</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <header class="site-header initial-hide">
+        <div class="container pt-4">
+            <div class="header__container">
+                <a href="index.html" class="header__logo">
+                    <img src="img/2009-TerraClean-Logo-white.png" alt="" " class=" logo" /></a>
+                <!-- Ozmenu -->
+                <div class="menu-open"><span class="open"></span></div>
+                <div class="ozmenu mt-4">
+                    <div class="menu-close"><span class="close"></span></div>
+                    <ul class="ozmenu-nav">
+                        <li class="item"><a href="/">Головна</a></li>
+                        <li class="item"><a href="arhive-produckt.html">Продукти</a></li>
+                        <li class="item"><a href="gallery2.html">Галерея</a></li>
+                        <li class="item dropdownitem">
+                            <a href="#" class="nav-dropdown">Як працює TerraClean</a>
+                            <div class="dropdown">
+                                <ul>
+                                    <li class="item"><a href="single-post.html">Як працює очищення DPF</a></li>
+                                    <li class="item"><a href="single-post2.html">Як працює очищення від вуглецю</a></li>
+                                    <li class="item"><a href="single-post3.html">Як працює очищення двигуна з прямим
+                                            уприскуванням </a>
+                                    </li>
+                                    <li class="item"><a href="queshin.html">Часті Питання </a></li>
+                                    <li class="item dropdownitem">
+                                        <a href="#" class="nav-dropdown">Сервіси</a>
+                                        <div class="dropdown">
+                                            <ul>
+                                                <li class="item"><a href="#">Дизель</a></li>
+                                                <li class="item"><a href="#">Бензин</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- <li class="item dropdownitem">
+                  <a href="#" class="nav-dropdown">Питання</a>
+                  <div class="dropdown">
+                    <ul>
+                      <li class="item"><a href="#">Corporate Web Design</a></li>
+                      <li class="item dropdownitem">
+                        <a href="#" class="nav-dropdown">E-Commerce</a>
+                        <div class="dropdown">
+                          <ul>
+                            <li class="item"><a href="#">Ready E-Commerce</a></li>
+                            <li class="item"><a href="#">Custom E-Commerce</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="item dropdownitem">
+                        <a href="#" class="nav-dropdown">Personal Web Design</a>
+                        <div class="dropdown">
+                          <ul>
+                            <li class="item"><a href="#">Blog Site</a></li>
+                            <li class="item"><a href="#">Portfolio Site</a></li>
+                            <li class="item"><a href="#">Custom Personal Site</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="item"><a href="#">Custom Web Design</a></li>
+                      <li class="item"><a href="#">Onepage Web Design</a></li>
+                    </ul>
+                  </div>
+                </li> -->
+
+                        <li class="item dropdownitem">
+                            <a href="#" class="nav-dropdown">
+                                Контакти
+                            </a>
+                            <div class="dropdown">
+                                <ul>
+                                    <li class="item"><a href="#">Блог</a></li>
+                                    <li class="item"><a href="#">Про нас</a></li>
+                                    <li class="item"><a href="#">Admin Panel</a></li>
+                                </ul>
+
+                            </div>
+                        </li>
+                        <!-- реєстрація юзера -->
+                        <li class="item dropdownitem">
+                            <a href="#" class="nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    fill="rgba(253,0,0,1)" width="20" height="20">
+                                    <path
+                                        d="M14 14.252V22H4C4 17.5817 7.58172 14 12 14C12.6906 14 13.3608 14.0875 14 14.252ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM18 17V14H20V17H23V19H20V22H18V19H15V17H18Z">
+                                    </path>
+                                </svg></a>
+                            <div class="dropdown dropdown-left">
+                                <ul>
+                                    <li class="item"><a href="register-form.html"><i class="fas fa-user-plus">
+                                                Реєстрація</i></a></li>
+                                    <li class="item"><a href="#"><i class="fas fa-right-to-bracket"> Увійти</i></a></li>
+                                    <li class="item"><a href="#"><i class="fas fa-user-circle"> Кабінет</i></a></li>
+                                    <li class="item"><a href="#"><i class="fas fa-right-from-bracket"> Вийти</i></a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </li>
+                        <!-- реєстрація юзера -->
+                    </ul>
+                </div>
+            </div> <!-- /Ozmenu -->
+        </div>
+    </header>
+    <div class="container">
+        <div class="container-fluid py-4">
+            <div class="row">
+                <!-- Фильтры -->
+                <div class="col-lg-3">
+                    <div class="filter-sidebar">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Пошук</h5>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="searchInput"
+                                        placeholder="Введіть назву товару..." />
+                                    <button class="btn btn-primary" onclick="applyFilters()">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Фільтри</h5>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Категорія</label>
+                                    <select class="form-select" id="categoryFilter">
+                                        <option value="">Всі категорії</option>
+                                        <option value="cleaner">Очисники паливної системи</option>
+                                        <option value="additive">Присадки до масла</option>
+                                        <option value="engine">Очисники двигуна</option>
+                                        <option value="dpf">Очисники DPF</option>
+                                        <option value="egr">Очисники EGR</option>
+
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Тип двигуна</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="gas"
+                                            id="engineTypeGas" />
+                                        <label class="form-check-label" for="engineTypeGas">
+                                            Бензиновий
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="diesel"
+                                            id="engineTypeDiesel" />
+                                        <label class="form-check-label" for="engineTypeDiesel">
+                                            Дизельний
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Ціна</label>
+                                    <div class="d-flex gap-2">
+                                        <input type="number" class="form-control" id="priceMin" placeholder="Від" />
+                                        <input type="number" class="form-control" id="priceMax" placeholder="До" />
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Наявність</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="inStock" />
+                                        <label class="form-check-label" for="inStock">
+                                            В наявності
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary w-100" onclick="applyFilters()">
+                                    Застосувати фільтри
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Список товаров -->
+                <div class="col-lg-9">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 id="productsCount">Знайдено товарів: 0</h4>
+                        <select class="form-select" style="width: auto" id="sortSelect" onchange="applyFilters()">
+                            <option value="popularity">За популярністю</option>
+                            <option value="price_asc">Від дешевих до дорогих</option>
+                            <option value="price_desc">Від дорогих до дешевих</option>
+                            <option value="rating">За рейтингом</option>
+                        </select>
+                    </div>
+
+                    <div class="row g-4" id="productsList">
+                        <!-- Товары будут добавляться здесь динамически -->
+                    </div>
+
+                    <!-- Пагинация -->
+                    <nav class="mt-4">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Попередня</a>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Наступна</a>
+                            </li>
+                        </ul>
+                        <ul class="pagination justify-content-center" id="pagination"></ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- Модальне вікно швидкого перегляду -->
+        <div class="quick-view-modal" id="quickViewModal" style="display:none;">
+            <div class="quick-view-content bg-white rounded shadow p-4 position-relative">
+                <button class="btn-close position-absolute top-0 end-0 m-3" onclick="closeQuickView()"></button>
+                <div class="row align-items-center" id="quickViewContent">
+                    <!-- Контент буде доданий динамічно -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <section>
+        <footer class="footer">
+            <a href="#top" class="back-to-top" title="Back to top">↑</a>
+            <div class="footer__container">
+                <div class="footer__section footer__logo">
+                    <img src="img/2009-TerraClean-Logo-white.png" style="width: 280px;">
+                </div>
+                <div class="footer__section footer__contacts">
+                    <h4 class="footer__title">Контакти</h4>
+                    <ul class="footer__list">
+                        <li><a href="tel:+380000000000">+38 (000) 000-00-00</a></li>
+                        <li><a href="mailto:info@example.com">info@example.com</a></li>
+                        <li>Київ, вул. Прикладна, 1</li>
+                    </ul>
+                </div>
+
+                <div class="footer__section footer__navigation">
+                    <h4 class="footer__title">Навігація</h4>
+                    <ul class="footer__list">
+                        <li><a href="#">Головна</a></li>
+                        <li><a href="#">Послуги</a></li>
+                        <li><a href="#">Про нас</a></li>
+                        <li><a href="#">Контакти</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__section footer__social">
+                    <h4 class="footer__title">Ми у соцмережах</h4>
+                    <div class="footer__social-links">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Example Company. Всі права захищені.</p>
+            </div>
+        </footer>
+    </section>
+    <script>
+        // Данные товаров (в реальном проекте это бы загружалось с сервера)
+        const products = [
+            {
+                id: 1,
+                name: "Очищувач допалювання палива",
+                sku: "201420",
+                category: "cleaner",
+                engineType: "gas",
+                price: 1200,
+                priceWholesale: 950,
+                stock: 45,
+                image: "img/201170.png",
+                description:
+                    "Молекулярно модифікований бензин для очищення паливних форсунок, камер згоряння, датчиків O2 і каталітичних перетворювачів. Використовується в поєднанні з декарбонізатором паливної системи TerraClean. ",
+                rating: 4.5,
+                popularity: 100,
+            },
+            {
+                id: 2,
+                name: "Присадка для двигуна",
+                sku: "201421",
+                category: "additive",
+                engineType: "diesel",
+                price: 950,
+                priceWholesale: 750,
+                stock: 30,
+                image: "img/201250.png",
+                description:
+                    "Високоефективна присадка для дизельних двигунів. Покращує продуктивність та подовжує термін служби двигуна.",
+                rating: 4.2,
+                popularity: 85,
+                description:
+                    "Високоефективна присадка для дизельних двигунів. Покращує продуктивність та подовжує термін служби двигуна.",
+            },
+            {
+                id: 3,
+                name: "Очисник двигуна професійний",
+                sku: "201422",
+                category: "engine",
+                engineType: "gas",
+                price: 1500,
+                priceWholesale: 1200,
+                stock: 0,
+                image: "img/201280.png",
+                description:
+                    "Професійний очисник для бензинових двигунів. Видаляє нагар та відкладення.",
+                rating: 4,
+                popularity: 95,
+            },
+            {
+                id: 4,
+                name: "Очисник двигуна професійний",
+                sku: "201425",
+                category: "engine",
+                engineType: "gas",
+                price: 1900,
+                priceWholesale: 100,
+                stock: 50,
+                image: "img/201420.png",
+                description:
+                    "Професійний очисник для бензинових двигунів. Видаляє нагар та відкладення.",
+                rating: 4.8,
+                popularity: 95,
+            },
+            {
+                id: 4,
+                name: "Очисник двигуна професійний",
+                sku: "201425",
+                category: "additive",
+                engineType: "diesel",
+                price: 1900,
+                priceWholesale: 100,
+                stock: 0,
+                image: "img/201458.png",
+                description:
+                    "Професійний очисник для бензинових двигунів. Видаляє нагар та відкладення.",
+                rating: 4.8,
+                popularity: 95,
+            },
+            {
+                id: 4,
+                name: "Очисник двигуна професійний",
+                sku: "201425",
+                category: "engine",
+                engineType: "gas",
+                price: 1900,
+                priceWholesale: 100,
+                stock: 0,
+                image: "img/201467-Group_reduced-1-2.webp",
+                description:
+                    "Професійний очисник для бензинових двигунів. Видаляє нагар та відкладення.",
+                rating: 4.8,
+                popularity: 95,
+            },
+            {
+                id: 4,
+                name: "Очисник двигуна професійний",
+                sku: "201425",
+                category: "engine",
+                engineType: "gas",
+                price: 1900,
+                priceWholesale: 100,
+                stock: 12,
+                image: "img/206230.webp",
+                description:
+                    "Професійний очисник для бензинових двигунів. Видаляє нагар та відкладення.",
+                rating: 4.8,
+                popularity: 95,
+            },
+            {
+                id: 4,
+                name: "Очисник двигуна професійний",
+                sku: "201425",
+                category: "engine",
+                engineType: "gas",
+                price: 1900,
+                priceWholesale: 100,
+                stock: 0,
+                image: "img/500-4006T.jpg",
+                description:
+                    "Професійний очисник для бензинових двигунів. Видаляє нагар та відкладення.",
+                rating: 4.8,
+                popularity: 95,
+            },
+            {
+                id: 4,
+                name: "Очисник двигуна професійний",
+                sku: "201425",
+                category: "engine",
+                engineType: "gas",
+                price: 1900,
+                priceWholesale: 100,
+                stock: 8,
+                image: "img/image_part_001.jpg",
+                description:
+                    " lorem *9",
+                rating: 4.8,
+                popularity: 95,
+            },
+            {
+                id: 4,
+                name: "Очисник двигуна професійний",
+                sku: "201425",
+                category: "engine",
+                engineType: "gas",
+                price: 1900,
+                priceWholesale: 100,
+                stock: 0,
+                image: "img/201420.png",
+                description:
+                    "Професійний очисник для бензинових двигунів. Видаляє нагар та відкладення.",
+                rating: 4.8,
+                popularity: 95,
+            },
+            {
+                id: 4,
+                name: "Очисник двигуна професійний",
+                sku: "201425",
+                category: "engine",
+                engineType: "gas",
+                price: 1900,
+                priceWholesale: 100,
+                stock: 0,
+                image: "img/201420.png",
+                description:
+                    "Професійний очисник для бензинових двигунів. Видаляє нагар та відкладення.",
+                rating: 4.8,
+                popularity: 95,
+            },
+            {
+                id: 4,
+                name: "Очисник двигуна професійний",
+                sku: "201425",
+                category: "engine",
+                engineType: "gas",
+                price: 1900,
+                priceWholesale: 100,
+                stock: 0,
+                image: "img/201420.png",
+                description:
+                    "Професійний очисник для бензинових двигунів. Видаляє нагар та відкладення.",
+                rating: 4.8,
+                popularity: 95,
+            },
+            {
+                id: 4,
+                name: "Очисник двигуна професійний",
+                sku: "201425",
+                category: "engine",
+                engineType: "gas",
+                price: 1900,
+                priceWholesale: 100,
+                stock: 0,
+                image: "img/201420.png",
+                description:
+                    "Професійний очисник для бензинових двигунів. Видаляє нагар та відкладення.",
+                rating: 4.8,
+                popularity: 95,
+            },
+            {
+                id: 4,
+                name: "Очисник двигуна професійний",
+                sku: "201425",
+                category: "engine",
+                engineType: "gas",
+                price: 1900,
+                priceWholesale: 100,
+                stock: 0,
+                image: "img/201420.png",
+                description:
+                    "Професійний очисник для бензинових двигунів. Видаляє нагар та відкладення.",
+                rating: 4.8,
+                popularity: 95,
+            },
+            {
+                id: 4,
+                name: "Очисник двигуна професійний",
+                sku: "201425",
+                category: "engine",
+                engineType: "gas",
+                price: 1900,
+                priceWholesale: 100,
+                stock: 0,
+                image: "img/201420.png",
+                description:
+                    "Професійний очисник для бензинових двигунів. Видаляє нагар та відкладення.",
+                rating: 4.8,
+                popularity: 95,
+            },
+            {
+                id: 4,
+                name: "Очисник двигуна професійний",
+                sku: "201425",
+                category: "engine",
+                engineType: "gas",
+                price: 1900,
+                priceWholesale: 100,
+                stock: 0,
+                image: "img/201420.png",
+                description:
+                    "Професійний очисник для бензинових двигунів. Видаляє нагар та відкладення.",
+                rating: 4.8,
+                popularity: 95,
+            },
+        ];
+
+        // Текущее состояние фильтров
+        let currentFilters = {
+            search: "",
+            category: "",
+            engineTypes: [],
+            priceMin: "",
+            priceMax: "",
+            inStock: false,
+            sort: "popularity",
+            page: 1,
+        };
+
+        // Функция фильтрации товаров
+        function filterProducts() {
+            let filtered = [...products];
+
+            // Поиск по названию
+            if (currentFilters.search) {
+                const searchLower = currentFilters.search.toLowerCase();
+                filtered = filtered.filter(
+                    (product) =>
+                        product.name.toLowerCase().includes(searchLower) ||
+                        product.sku.toLowerCase().includes(searchLower)
+                );
+            }
+
+            // Фильтр по категории
+            if (currentFilters.category) {
+                filtered = filtered.filter(
+                    (product) => product.category === currentFilters.category
+                );
+            }
+
+            // Фильтр по типу двигателя
+            if (currentFilters.engineTypes.length > 0) {
+                filtered = filtered.filter((product) =>
+                    currentFilters.engineTypes.includes(product.engineType)
+                );
+            }
+
+            // Фильтр по цене
+            if (currentFilters.priceMin) {
+                filtered = filtered.filter(
+                    (product) => product.price >= currentFilters.priceMin
+                );
+            }
+            if (currentFilters.priceMax) {
+                filtered = filtered.filter(
+                    (product) => product.price <= currentFilters.priceMax
+                );
+            }
+
+            // Фильтр по наличию
+            if (currentFilters.inStock) {
+                filtered = filtered.filter((product) => product.stock > 0);
+            }
+
+            // Сортировка
+            switch (currentFilters.sort) {
+                case "price_asc":
+                    filtered.sort((a, b) => a.price - b.price);
+                    break;
+                case "price_desc":
+                    filtered.sort((a, b) => b.price - a.price);
+                    break;
+                case "rating":
+                    filtered.sort((a, b) => b.rating - a.rating);
+                    break;
+                case "popularity":
+                default:
+                    filtered.sort((a, b) => b.popularity - a.popularity);
+            }
+
+            return filtered;
+        }
+
+        // Функция рендеринга товаров
+        function renderProducts(filteredProducts) {
+            const productsContainer = document.getElementById("productsList");
+            productsContainer.innerHTML = "";
+
+            filteredProducts.forEach((product) => {
+                const productCard = `
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 product-card" data-product-id="${product.id
+                    }">
+                            <div class="position-relative">
+                                <button class="favorite-btn" onclick="toggleFavorite(this)">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <img src="${product.image
+                    }" class="card-img-top" alt="${product.name}">
+                                <div class="quick-view-btn" onclick="showQuickView(${product.id
+                    })">
+                                    Швидкий перегляд
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <span class="badge bg-secondary mb-2">${getCategoryName(
+                        product.category
+                    )}</span>
+                                <h5 class="card-title">${product.name
+                    } <span class="text-muted">(${product.sku
+                    })</span></h5>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="fs-5">${product.price} ₴</span>
+                                    <span class="badge ${product.stock > 0
+                        ? "bg-success"
+                        : "bg-danger"
+                    }">
+                                        ${product.stock > 0
+                        ? "В наявності"
+                        : "Немає в наявності"
+                    }
+                                    </span>
+                                </div>
+                                <button class="btn btn-primary w-100" onclick="addToCart(${product.id
+                    })">В кошик</button>
+                            </div>
+                                                </div>
+                    </div>
+                `;
+                productsContainer.insertAdjacentHTML("beforeend", productCard);
+            });
+
+            document.getElementById(
+                "productsCount"
+            ).textContent = `Знайдено товарів: ${filteredProducts.length}`;
+        }
+
+        // Применение фильтров
+        function applyFilters() {
+            currentFilters.search = document
+                .getElementById("searchInput")
+                .value.trim();
+            currentFilters.category =
+                document.getElementById("categoryFilter").value;
+            currentFilters.engineTypes = Array.from(
+                document.querySelectorAll('input[type="checkbox"]:checked')
+            ).map((checkbox) => checkbox.value);
+            currentFilters.priceMin =
+                parseFloat(document.getElementById("priceMin").value) || "";
+            currentFilters.priceMax =
+                parseFloat(document.getElementById("priceMax").value) || "";
+            currentFilters.inStock = document.getElementById("inStock").checked;
+            currentFilters.sort = document.getElementById("sortSelect").value;
+
+            const filteredProducts = filterProducts();
+            renderProducts(filteredProducts);
+        }
+
+        // Дополнительные функции (добавление в корзину, быстрый просмотр, работа с избранным)
+        function addToCart(productId) {
+            alert(`Товар з ID ${productId} додано до кошика!`);
+        }
+
+        function showQuickView(productId) {
+            const product = products.find((p) => p.id === productId);
+            const quickViewContent = document.getElementById("quickViewContent");
+
+            quickViewContent.innerHTML = `
+    <div class="col-md-6">
+      <img src="${product.image}" alt="${product.name}" class="img-fluid rounded">
+    </div>
+    <div class="col-md-6">
+      <h3 class="mb-3">${product.name}</h3>
+      <p><strong>Артикул:</strong> ${product.sku}</p>
+      <p><strong>Категорія:</strong> ${getCategoryName(product.category)}</p>
+      <p><strong>Опис:</strong> ${product.description}</p>
+      <p class="fs-5"><strong>Ціна:</strong> ${product.price} ₴</p>
+      <p><strong>Оптова ціна:</strong> ${product.priceWholesale} ₴</p>
+      <p><strong>Наявність:</strong> 
+        <span class="badge ${product.stock > 0 ? 'bg-success' : 'bg-danger'}">
+          ${product.stock > 0 ? 'В наявності' : 'Немає'}
+        </span>
+      </p>
+      <p><strong>Рейтинг:</strong> ${renderStars(product.rating)}</p>
+      <button class="btn btn-primary mt-3" onclick="addToCart(${product.id})">
+        Додати в кошик
+      </button>
+    </div>
+  `;
+
+            document.getElementById("quickViewModal").style.display = "flex";
+        }
+
+        // render stars
+        function renderStars(rating) {
+            const fullStars = Math.floor(rating);
+            const halfStar = rating % 1 >= 0.5;
+            let html = "";
+
+            for (let i = 0; i < fullStars; i++) {
+                html += '<i class="fas fa-star text-warning"></i>';
+            }
+
+            if (halfStar) {
+                html += '<i class="fas fa-star-half-alt text-warning"></i>';
+            }
+
+            for (let i = fullStars + halfStar; i < 5; i++) {
+                html += '<i class="far fa-star text-warning"></i>';
+            }
+
+            return html;
+        }
+
+        // Закриття модального вікна швидкого перегляду
+        document.getElementById("quickViewModal").addEventListener("click", function (e) {
+            if (e.target === this) {
+                closeQuickView();
+            }
+        });
+
+
+
+
+        function closeQuickView() {
+            document.getElementById("quickViewModal").style.display = "none";
+        }
+
+        function toggleFavorite(button) {
+            const icon = button.querySelector("i");
+            icon.classList.toggle("far");
+            icon.classList.toggle("fas");
+        }
+
+        function getCategoryName(categoryKey) {
+            const categories = {
+                cleaner: "Очисники паливної системи",
+                additive: "Присадки до масла",
+                engine: "Очисники двигуна",
+            };
+            return categories[categoryKey] || "Категорія";
+        }
+
+        // Инициализация
+        document.addEventListener("DOMContentLoaded", () => {
+            applyFilters();
+        });
+    </script>
+
+
+
+    <!-- Compare this snippet from index2.html: -->
+    <script src="js/scriptmenu.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/cndk.beforeafter.js"></script>
+    <script src="js/jquery.socialfloating.js"></script>
+
+    <!--  -->
+    <script>
+        document.querySelectorAll(".accordion-header").forEach(header => {
+            header.addEventListener("click", () => {
+                const content = header.nextElementSibling;
+                const isOpen = content.classList.contains("open");
+
+                // Закрити всі інші
+                document.querySelectorAll(".accordion-content").forEach(c => {
+                    c.style.maxHeight = null;
+                    c.classList.remove("open");
+                    c.previousElementSibling.classList.remove("active");
+                });
+
+                // Якщо поточний вже відкритий — закрити
+                if (isOpen) {
+                    content.style.maxHeight = null;
+                    header.classList.remove("active");
+                } else {
+                    content.classList.add("open");
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    header.classList.add("active");
+                }
+            });
+        });
+    </script>
+    <script>
+        // see-more functionality for DPF section
+        const toggleDpfButton = document.getElementById('toggle-button');
+        const dpfMoreContent = document.querySelector('.see-more-content');
+
+        toggleDpfButton.addEventListener('click', () => {
+            const isVisible = dpfMoreContent.style.display === 'block';
+            dpfMoreContent.style.display = isVisible ? 'none' : 'block';
+            toggleDpfButton.textContent = isVisible ? 'Показати більше' : 'Сховати';
+        });
+    </script>
+
+
+    <script>
+        let lastScrollY = window.scrollY;
+        const header = document.querySelector('.site-header');
+        const showThreshold = window.innerHeight / 4;
+        let headerRevealed = false;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (!headerRevealed && currentScrollY > showThreshold) {
+                header.classList.remove('initial-hide');
+                headerRevealed = true;
+                lastScrollY = currentScrollY;
+                return;
+            }
+
+            if (headerRevealed) {
+                if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                    header.classList.add('hide');
+                } else {
+                    header.classList.remove('hide');
+                }
+            }
+
+            lastScrollY = currentScrollY;
+        });
+    </script>
+    <!-- social -->
+    <script>
+        // Social Floating Buttons
+        $(document).ready(function () {
+            const myButtons = [
+                [
+                    { icon: 'facebook', enabled: true, link: 'https://facebook.com', color: '#3b' },
+                    { icon: 'twitter', enabled: true, link: 'https://twitter.com', color: '#00aced' },
+                    { icon: 'github', enabled: true, link: 'https://github.com', color: '#333333' }
+                ],
+                [
+                    { icon: 'phone', enabled: true, link: 'tel:+123456789' },
+                    { icon: 'envelope', enabled: true, link: 'mailto:test@example.com' }
+                ]
+            ];
+
+
+
+            $.socialfloating({
+                buttons: myButtons,
+                position: 'left',
+                // effect: 'slide-on-scroll',
+                showHideButton: true
+            });
+        });
+    </script>
+</body>
+
+
+
+</html>

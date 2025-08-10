@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+
+    <link rel="stylesheet" href="css/lightgallery/lightgallery.css">
+    <link type="text/css" rel="stylesheet" href="css/lightgallery/lg-zoom.css" />
+    <link type="text/css" rel="stylesheet" href="css/lightgallery/lg-thumbnail.css" />
+    <link type="text/css" rel="stylesheet" href="css/lightgallery/lg-video.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery-bundle.min.css">
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/socialfloating.css" rel="stylesheet" />
+    <link href="css/title.css" rel="stylesheet">
+    <link href="css/faq.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/testimonials.css">
+    <link href="css/style2.css" rel="stylesheet">
+
+
+
+</head>
+<style>
+    body {
+        background: linear-gradient(135deg, #1f2937 0%, #4b5563 100%);
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+
+    .text-gallery {
+        color: #e4e4e4;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .text-gallery p {
+        color: #e4e4e4;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 1.2em;
+    }
+
+    #gallery-mixed-content-demo a {
+        margin: 10px;
+        display: inline-block;
+    }
+
+    #gallery-mixed-content-demo img {
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(244, 242, 242, 0.1);
+    }
+</style>
+
+<body>
+    <!-- ОДНО меню внутри fullscreen -->
+    <header class="site-header initial-hide">
+        <div class="container pt-4">
+
+            <div class="header__container">
+                <a href="index.html" class="header__logo">
+                    <img src="img/2009-TerraClean-Logo-white.png" alt="" " class=" logo" /></a>
+                <!-- Ozmenu -->
+                <div class="menu-open"><span class="open"></span></div>
+                <div class="ozmenu mt-4">
+                    <div class="menu-close"><span class="close"></span></div>
+                    <ul class="ozmenu-nav">
+                        <li class="item"><a href="/">Головна</a></li>
+                        <li class="item"><a href="arhive-produckt.html">Продукти</a></li>
+                        <li class="item"><a href="gallery2.html">Галерея</a></li>
+                        <li class="item dropdownitem">
+                            <a href="#" class="nav-dropdown">Як працює TerraClean</a>
+                            <div class="dropdown">
+                                <ul>
+                                    <li class="item"><a href="single-post.html">Як працює очищення DPF</a></li>
+                                    <li class="item"><a href="single-post2.html">Як працює очищення від вуглецю</a></li>
+                                    <li class="item"><a href="single-post3.html">Як працює очищення двигуна з прямим
+                                            уприскуванням </a>
+                                    </li>
+                                    <li class="item"><a href="queshin.html">Часті Питання </a></li>
+                                    <li class="item dropdownitem">
+                                        <a href="#" class="nav-dropdown">Сервіси</a>
+                                        <div class="dropdown">
+                                            <ul>
+                                                <li class="item"><a href="#">Дизель</a></li>
+                                                <li class="item"><a href="#">Бензин</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- <li class="item dropdownitem">
+                  <a href="#" class="nav-dropdown">Питання</a>
+                  <div class="dropdown">
+                    <ul>
+                      <li class="item"><a href="#">Corporate Web Design</a></li>
+                      <li class="item dropdownitem">
+                        <a href="#" class="nav-dropdown">E-Commerce</a>
+                        <div class="dropdown">
+                          <ul>
+                            <li class="item"><a href="#">Ready E-Commerce</a></li>
+                            <li class="item"><a href="#">Custom E-Commerce</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="item dropdownitem">
+                        <a href="#" class="nav-dropdown">Personal Web Design</a>
+                        <div class="dropdown">
+                          <ul>
+                            <li class="item"><a href="#">Blog Site</a></li>
+                            <li class="item"><a href="#">Portfolio Site</a></li>
+                            <li class="item"><a href="#">Custom Personal Site</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="item"><a href="#">Custom Web Design</a></li>
+                      <li class="item"><a href="#">Onepage Web Design</a></li>
+                    </ul>
+                  </div>
+                </li> -->
+
+                        <li class="item dropdownitem">
+                            <a href="#" class="nav-dropdown">
+                                Контакти
+                            </a>
+                            <div class="dropdown">
+                                <ul>
+                                    <li class="item"><a href="#">Блог</a></li>
+                                    <li class="item"><a href="#">Про нас</a></li>
+                                    <li class="item"><a href="#">Admin Panel</a></li>
+                                </ul>
+
+                            </div>
+                        </li>
+                        <!-- реєстрація юзера -->
+                        <li class="item dropdownitem">
+                            <a href="#" class="nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    fill="rgba(253,0,0,1)" width="20" height="20">
+                                    <path
+                                        d="M14 14.252V22H4C4 17.5817 7.58172 14 12 14C12.6906 14 13.3608 14.0875 14 14.252ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM18 17V14H20V17H23V19H20V22H18V19H15V17H18Z">
+                                    </path>
+                                </svg></a>
+                            <div class="dropdown dropdown-left">
+                                <ul>
+                                    <li class="item"><a href="register-form.html"><i class="fas fa-user-plus">
+                                                Реєстрація</i></a></li>
+                                    <li class="item"><a href="#"><i class="fas fa-right-to-bracket"> Увійти</i></a></li>
+                                    <li class="item"><a href="#"><i class="fas fa-user-circle"> Кабінет</i></a></li>
+                                    <li class="item"><a href="#"><i class="fas fa-right-from-bracket"> Вийти</i></a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </li>
+                        <!-- реєстрація юзера -->
+                    </ul>
+                </div>
+            </div> <!-- /Ozmenu -->
+        </div>
+    </header>
+
+    <section class="page-title">
+        <div class="page-title__overlay">
+            <div class="container">
+                <!-- <img src="img/2009-TerraClean-Logo-white.png" alt="TerraClean Logo" class="page-title__logo img-fluid"
+                    style="max-width: 300px;"> -->
+                <h2 class="page-title__heading">Галерея</h2>
+                <nav class="breadcrumbs">
+                    <a href="/">Головна</a>
+                    <span> / </span>
+                    <a href="#">Послуги</a>
+                    <span> / </span>
+                    <span>Поточна сторінка</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <div class="container text-center">
+
+        <h1 class="text-gallery"> Галерея TerraClean</h1>
+        <p class="text-gallery">Деякі фото та відео</p>
+        <div id="gallery-mixed-content-demo">
+
+
+            <a href="img/201250.png">
+                <img width="250" src="img/201250.png" />
+            </a>
+            <a href="img/201410.png">
+                <img width="250" src="img/201410.png" />
+            </a>
+            <a href="img/201458.png">
+                <img width="250" src="img/201458.png" />
+            </a>
+            <a href="img/500-4006T.jpg">
+                <img width="250" src="img/500-4006T.jpg" />
+            </a>
+            <!-- video -->
+            <a href="" data-lg-size="1200-720"
+                data-video='{"source": [{"src":"/img/TerraClean-очистка-двигателя-amsDGGYdTp4-2.mp4", "type":"video/mp4"}], "attributes": {"preload": false, "controls": true}}'
+                data-poster="img/TerraClean-очистка-двигателя-amsDGGYdTp4-2.mp4"
+                data-sub-html="<h4>Видко TerraClean</h4>">
+                <img width="300" height="200" class="img-responsive"
+                    src="img/Знімок екрана 2025-07-10 о 22_optimized__optimized_.webp" />
+            </a>
+            <a href="" data-lg-size="1200-720"
+                data-video='{"source": [{"src":"/img/vid3.mp4", "type":"video/mp4"}], "attributes": {"preload": false, "controls": true}}'
+                data-poster="img/vid3.mp4" data-sub-html="<h4>Видко TerraClean</h4>">
+                <img width="300" height="200" class="img-responsive" src="img/vid3.jpg" />
+            </a>
+
+            <a href="" data-lg-size="1200-720"
+                data-video='{"source": [{"src":"/img/vid4.mp4", "type":"video/mp4"}], "attributes": {"preload": false, "controls": true}}'
+                data-poster="img/vid4.mp4" data-sub-html="<h4>Видко TerraClean</h4>">
+                <img width="300" height="200" class="img-responsive" src="img/Знімок opel.jpg" />
+            </a>
+            <!-- video -->
+            <a href="" data-lg-size="1200-720"
+                data-video='{"source": [{"src":"/img/vid1.mp4", "type":"video/mp4"}], "attributes": {"preload": false, "controls": true}}'
+                data-poster="img/vid1.mp4" data-sub-html="<h4>Видко TerraClean</h4>">
+                <img width="300" height="200" class="img-responsive" src="img/vid4.jpg" />
+            </a>
+            <a href="img/201280.png">
+                <img width="300" src="img/201280.png" />
+            </a>
+            <a href="img/500-4006T.jpg">
+                <img width="250" src="img/500-4006T.jpg" />
+            </a>
+            <a href="img/201250.png">
+                <img width="250" src="img/201250.png" />
+            </a>
+            <a href="img/201410.png">
+                <img width="250" src="img/201410.png" />
+            </a>
+            <a href="img/201458.png">
+                <img width="250" src="img/201458.png" />
+            </a>
+
+            <a href="img/500-4006T.jpg">
+                <img width="250" src="img/500-4006T.jpg" />
+            </a>
+            <a href="img/201280.png">
+                <img width="300" src="img/201280.png" />
+            </a>
+
+
+
+            <a href="img/201280.png">
+                <img width="300" src="img/201280.png" />
+            </a>
+            <a href="img/201250.png">
+                <img width="250" src="img/201250.png" />
+            </a>
+            <a href="img/201410.png">
+                <img width="250" src="img/201410.png" />
+            </a>
+
+            <a href="img/201458.png">
+                <img width="250" src="img/201458.png" />
+            </a>
+
+            <a href="img/201280.png">
+                <img width="300" src="img/201280.png" />
+            </a>
+
+
+
+        </div>
+    </div>
+
+    </div>
+
+    <section>
+        <footer class="footer">
+            <a href="#top" class="back-to-top" title="Back to top">↑</a>
+            <div class="footer__container">
+                <div class="footer__section footer__logo">
+                    <img src="img/2009-TerraClean-Logo-white.png" style="width: 280px;">
+                </div>
+                <div class="footer__section footer__contacts">
+                    <h4 class="footer__title">Контакти</h4>
+                    <ul class="footer__list">
+                        <li><a href="tel:+380000000000">+38 (000) 000-00-00</a></li>
+                        <li><a href="mailto:info@example.com">info@example.com</a></li>
+                        <li>Київ, вул. Прикладна, 1</li>
+                    </ul>
+                </div>
+
+                <div class="footer__section footer__navigation">
+                    <h4 class="footer__title">Навігація</h4>
+                    <ul class="footer__list">
+                        <li><a href="#">Головна</a></li>
+                        <li><a href="#">Послуги</a></li>
+                        <li><a href="#">Про нас</a></li>
+                        <li><a href="#">Контакти</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__section footer__social">
+                    <h4 class="footer__title">Ми у соцмережах</h4>
+                    <div class="footer__social-links">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Example Company. Всі права захищені.</p>
+            </div>
+        </footer>
+    </section>
+
+    <script src="js/lightgallery/lightgallery.min.js"></script>
+    <script src="js/plugins/lg-thumbnail.umd.js"></script>
+    <script src="js/plugins/lg-thumbnail.min.js"></script>
+    <script src="js/plugins/lg-zoom.umd.js"></script>
+    <script src="js/plugins/lg-rotate.min.js"></script>
+    <script src="js/plugins/lg-video.min.js"></script>
+
+    <script type="text/javascript">
+        lightGallery(document.getElementById('gallery-mixed-content-demo'), {
+            plugins: [lgZoom, lgThumbnail, lgVideo],
+            speed: 500,
+            thumbnail: true,
+            animateThumb: false,
+            zoomFromOrigin: false,
+            allowMediaOverlap: true,
+            toggleThumb: true,
+
+        });
+
+    </script>
+
+    <!-- Compare this snippet from index2.html: -->
+    <script src="js/scriptmenu.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/cndk.beforeafter.js"></script>
+    <script src="js/testimonials.js"></script>
+    <script src="js/jquery.socialfloating.js"></script>
+    <script src="js/socialfloating.js"></script>
+
+    <script>
+        let lastScrollY = window.scrollY;
+        const header = document.querySelector('.site-header');
+        const showThreshold = window.innerHeight / 4;
+        let headerRevealed = false;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (!headerRevealed && currentScrollY > showThreshold) {
+                header.classList.remove('initial-hide');
+                headerRevealed = true;
+                lastScrollY = currentScrollY;
+                return;
+            }
+
+            if (headerRevealed) {
+                if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                    header.classList.add('hide');
+                } else {
+                    header.classList.remove('hide');
+                }
+            }
+
+            lastScrollY = currentScrollY;
+        });
+    </script>
+</body>
+
+</html>

@@ -9,74 +9,172 @@
     <link href="css/footer.css" rel="stylesheet">
     <link href="css/socialfloating.css" rel="stylesheet" />
     <link href="css/title.css" rel="stylesheet">
+    <link href="css/faq.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/testimonials.css">
     <link href="css/style2.css" rel="stylesheet">
     <title>FAQ — TerraClean</title>
-    <style>
-        .accordion {
-            max-width: 800px;
-            margin: 50px auto;
-        }
 
-        .accordion-item {
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 10px;
-            overflow: hidden;
-        }
-
-        .accordion-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            padding: 16px 20px;
-            font-size: 18px;
-            font-weight: bold;
-            background-color: #e6f0ff;
-            transition: background-color 0.3s;
-        }
-
-        .accordion-header:hover {
-            background-color: #d4e4ff;
-        }
-
-        .accordion-icon {
-            transition: transform 0.3s;
-            font-size: 18px;
-        }
-
-        .accordion-header.active .accordion-icon {
-            transform: rotate(180deg);
-        }
-
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            padding: 0 20px;
-            font-size: 16px;
-            background-color: #ffffff;
-            line-height: 1.5;
-            transition: max-height 0.5s ease;
-        }
-
-        .accordion-content.open {
-            padding: 16px 20px;
-        }
-
-        @media (max-width: 600px) {
-            .accordion-header {
-                font-size: 16px;
-                padding: 12px 16px;
-            }
-
-            .accordion-content {
-                font-size: 15px;
-            }
-        }
-    </style>
 </head>
+<style>
+    /* body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background: #f9f9f9;
+        color: #333;
+    } */
+
+    /* .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 20px;
+    } */
+
+    h1,
+    h2,
+    h3 {
+        color: #e4e4e4;
+    }
+
+    .faq-intro p {
+        color: #e4e4e4;
+        font-size: 1.1em;
+        margin: 20px 0;
+    }
+
+    /* .faq-intro,
+    .faq-cta,
+    .faq-testimonials .faq-video {
+        margin-bottom: 40px;
+    } */
+
+    /* .accordion-item {
+        background: #fff;
+        margin-bottom: 10px;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .accordion-header {
+        padding: 15px 20px;
+        cursor: pointer;
+        background: #ecf0f1;
+        position: relative;
+    }
+
+    .accordion-header:hover {
+        background: #dce3e6;
+    }
+
+    .accordion-icon {
+        position: absolute;
+        right: 20px;
+    }
+
+    .accordion-content {
+        display: none;
+        padding: 0 20px 15px;
+    } */
+
+    .faq-nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .faq-nav li {
+        margin-top: 10px;
+    }
+
+    .faq-nav a {
+        padding: 6px 12px;
+        background: #3498db;
+        color: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .faq-nav a:hover {
+        background: #2980b9;
+    }
+
+    .btn-primary {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #27ae60;
+        color: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .btn-primary:hover {
+        background: #219150;
+    }
+
+    blockquote {
+        background: #fff;
+        border-left: 4px solid #27ae60;
+        margin: 0;
+        padding: 15px 20px;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .cta {
+        max-width: 1200px;
+        margin: 0 auto;
+
+        padding: clamp(20px, 4vw, 30px);
+        background: #9195a5;
+        color: white;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    .cta h2 {
+        color: white;
+        margin-bottom: 15px;
+        font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    }
+
+    .cta a {
+        display: inline-block;
+        margin-top: 15px;
+        margin-bottom: 25px;
+        padding: 12px 25px;
+        background: white;
+        color: #667eea;
+        border-radius: 10px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .cta a:hover {
+        background: #e0e7ff;
+        transform: translateY(-2px);
+    }
+</style>
 
 <body>
     <header class="site-header initial-hide">
@@ -91,7 +189,7 @@
                     <div class="menu-close"><span class="close"></span></div>
                     <ul class="ozmenu-nav">
                         <li class="item"><a href="/">Головна</a></li>
-                        <li class="item"><a href="arhiv2.html">Продукти</a></li>
+                        <li class="item"><a href="arhive-produckt.html">Продукти</a></li>
                         <li class="item"><a href="gallery2.html">Галерея</a></li>
                         <li class="item dropdownitem">
                             <a href="#" class="nav-dropdown">Як працює TerraClean</a>
@@ -102,7 +200,7 @@
                                     <li class="item"><a href="single-post3.html">Як працює очищення двигуна з прямим
                                             уприскуванням </a>
                                     </li>
-                                    <li class="item"><a href="queshin.html">Часті Питання </a></li>
+                                    <li class="item"><a href="queshin.html">Найчастіші питання</a></li>
                                     <li class="item dropdownitem">
                                         <a href="#" class="nav-dropdown">Сервіси</a>
                                         <div class="dropdown">
@@ -190,7 +288,7 @@
             <div class="container">
                 <!-- <img src="img/2009-TerraClean-Logo-white.png" alt="TerraClean Logo" class="page-title__logo img-fluid"
                     style="max-width: 200px;"> -->
-                <h2 class="page-title__heading">Часті питання про TerraClean</h2>
+                <h2 class="page-title__heading">Найчастіші питання про TerraClean</h2>
                 <nav class="breadcrumbs">
                     <a href="/">Головна</a>
                     <span> / </span>
@@ -201,116 +299,291 @@
             </div>
         </div>
     </section>
-    <div class="accordion">
-        <div class="accordion-item">
-            <div class="accordion-header">
-                Що таке TerraClean?
-                <span class="accordion-icon">▼</span>
+    <div class="container">
+        <h1 class="faq-title">Найчастіші питання про систему TerraClean</h1>
+
+        <section class="faq-intro">
+            <p>На цій сторінці ви знайдете відповіді на найпоширеніші запитання щодо системи TerraClean, її переваг,
+                очищення DPF та інших важливих моментів для власників сучасних автомобілів.</p>
+        </section>
+        <nav class="faq-nav">
+            <ul>
+                <li><a href="#q1">Що буде, якщо не чистити DPF?</a></li>
+                <li><a href="#q2">Чи треба чистити, як що працює?</a></li>
+                <li><a href="#q3">Як часто чистити?</a></li>
+                <li><a href="#q4">Без розбирання можливо?</a></li>
+                <li><a href="#q5">Чим TerraClean кращий?</a></li>
+            </ul>
+        </nav>
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    Що таке TerraClean?
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p>TerraClean — це запатентована технологія очищення двигунів внутрішнього згоряння, яка зменшує
+                        відкладення вуглецю в системі впуску, камерах згоряння, каталізаторах і датчиках. Це покращує
+                        продуктивність, знижує викиди та покращує економію пального.</p>
+                    <p>TerraClean — комплект обладнання, що використовується для декарбюризації двигунів внутрішнього
+                        згоряння всіх видів.
+                    <p> В Україні, послуги доступні через мережу з більш ніж 7 затверджених центрів і
+                        мобільних технічних фахівців.</p>
+                    <p> Сервіс з продуктами TerraClean-Україна включає розблокування системи
+                        рециркуляції
+                        вихлопних газів — EGR і дизельних сажових фільтрів — компонентів DPF на дизельних транспортних
+                        засобах.</p>
+                </div>
             </div>
-            <div class="accordion-content">
-                <p>TerraClean — це запатентована технологія очищення двигунів внутрішнього згоряння, яка зменшує
-                    відкладення вуглецю в системі впуску, камерах згоряння, каталізаторах і датчиках. Це покращує
-                    продуктивність, знижує викиди та покращує економію пального.</p>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    Які переваги має TerraClean?
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <ul>
+                        <li>Покращена економія пального</li>
+                        <li>Менше викидів</li>
+                        <li>Краще прискорення та відгук дроселя</li>
+                        <li>Стабільніша робота двигуна</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    Чи підходить TerraClean для дизельних двигунів?
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Так. TerraClean має рішення як для бензинових, так і для дизельних двигунів. Для дизеля також
+                        очищуються системи EGR і DPF, якщо є достатній потік повітря. У разі сильного засмічення DPF
+                        застосовується окрема процедура очищення.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    У мене є гараж, чи можу я стати агентом TerraClean?
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Так, у нас є система подачі заявок та схвалення для перспективних затверджених сервісних центрів
+                        TerraClean. Скористайтеся посиланням на пошту або контактами на головній сторінці, сторінці
+                        контактів. Заповніть дуже коротку форму — повністю. Після цього з вами зв'яжеться член нашої
+                        торгової команди.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    Дисконтна програма для дилерів TerraClean
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Для дилерів TerraClean-Україна діє система знижок і технологічна підтримка від інженерів
+                        компанії.
+                        Зв'яжіться з нами, і ми обговоримо деталі співпраці.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    Чи очищає TerraClean сажовий фільтр (DPF) і лямбда зонд?
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p>У системі рециркуляції відпрацьованих газів дизельного двигуна часто накопичується нагар. Ці
+                        відкладення можуть негативно вплинути на роботу двигуна. Очищувач індукційної системи TerraClean
+                        видаляє ці відкладення, відновлюючи економію палива та продуктивність двигуна. За допомогою
+                        спеціального адаптера, що підключається до системи ЄДР, очищувач, потрапляючи в систему
+                        рециркуляції
+                        BГ видаляє вуглецеві відкладення, скорочуючи цикли регенерації сажового фільтра.</p>
+
+                    <p>При використанні декорбанізатора відбувається комплексне розкоксування форсунок, впускного
+                        колектора,
+                        камери згоряння, поршнів з кільцями, датчиків лямбда-зонда, каталізатора. Все це без
+                        необхідності
+                        розбирання систем автомобіля. </p>
+                    <p>Якщо на вашому автомобілі причина включення індикації «Сheck engine» пов'язана з паливною
+                        системою
+                        або системою вихлопу, не поспішайте міняти дорогі датчики лямбда зонда. З часом датчик
+                        покривається
+                        шаром відпрацьованого і моторного масла (масляна сажа), що зменшує точність зняття показників
+                        датчика для регулювання бензинової суміші і розподілу оптимальної витрати палива. За допомогою
+                        TerraClean ми позбавимо вас від заміни датчиків кисню і продовжимо термін служби каталізатора.
+                    </p>
+                </div>
+            </div>
+            <div class="accordion-item" id="q1">
+                <div class="accordion-header">1. Що буде, якщо не чистити DPF? <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Ігнорування проблеми заблокованого сажового фільтра призведе до <strong>падіння потужності
+                            двигуна</strong>, <strong>збільшення витрати пального</strong>, а також <strong>пошкодження
+                            турбіни</strong> та інших компонентів. Зрештою фільтр може потребувати заміни.</p>
+                </div>
             </div>
         </div>
-        <div class="accordion-item">
-            <div class="accordion-header">
-                Які переваги має TerraClean?
-                <span class="accordion-icon">▼</span>
+        <section class="video-section feature fade-in-section">
+            <div class="video-section__container">
+                <div class="video-section__text">
+                    <h2 class="video-section__title feature__title ">Технологія TerraClean</h2>
+                    <div class="video-section__separator"></div>
+                    <p class="video-section__description">
+                        TerraClean очищає систему впорскування та, при необхідності, впускні клапани, щоб відновити
+                        працездатність
+                        форсунок та регулятора тиску палива. Це призводить до поліпшення тиску палива, поліпшення
+                        синхронізації та
+                        розпилення.
+                    </p>
+                </div>
+
+                <div class="video-section__media">
+                    <video class="video-section__video" controls poster="img/pposter-video.jpg">
+                        <source src="img/TerraClean-очистка-двигателя-amsDGGYdTp4-2.mp4" type="video/mp4">
+                    </video>
+                </div>
             </div>
-            <div class="accordion-content">
-                <ul>
-                    <li>Покращена економія пального</li>
-                    <li>Менше викидів</li>
-                    <li>Краще прискорення та відгук дроселя</li>
-                    <li>Стабільніша робота двигуна</li>
-                </ul>
+        </section> <!--video -->
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    Я керую гібридом, чи потрібен моєму авто TerraClean?
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Так. Гібридні технології та автомобілі, які використовують системи Stop-Go для економії палива,
+                        за
+                        своєю природою схильні до накопичення вуглецю і, як правило, утворюють більше вуглецевих
+                        відкладень,
+                        ніж інші автомобілі з аналогічним пробігом.</p>
+                </div>
             </div>
-        </div>
-        <div class="accordion-item">
-            <div class="accordion-header">
-                Чи підходить TerraClean для дизельних двигунів?
-                <span class="accordion-icon">▼</span>
+            <div class="accordion-item" id="q2">
+                <div class="accordion-header">2. Чи обов’язково чистити DPF, якщо двигун працює нормально? <span
+                        class="accordion-icon">▼</span></div>
+                <div class="accordion-content">
+                    <p>Так, <strong>профілактична чистка</strong> рекомендована навіть без симптомів. Це дозволяє
+                        запобігти засміченню та подовжити ресурс двигуна.</p>
+                </div>
             </div>
-            <div class="accordion-content">
-                <p>Так. TerraClean має рішення як для бензинових, так і для дизельних двигунів. Для дизеля також
-                    очищуються системи EGR і DPF, якщо є достатній потік повітря. У разі сильного засмічення DPF
-                    застосовується окрема процедура очищення.</p>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    Чи може очищення TerraClean пошкодити мій автомобіль?
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Проста відповідь — «ні». Служба TerraClean використовує паливо високого ступеня очищення, яке не
+                        зашкодить вашому автомобілю або будь-якому з його компонентів. Послуга TerraClean видалить з
+                        вашого
+                        автомобіля вуглець, що утворився з часом, а також інші забруднення (дьоготь і лаки), які
+                        накопичуються і погіршують характеристики вашого автомобіля.
+                    <p>Це «рішення» проблеми, це високоефективне профілактичне обслуговування, яке допоможе запобігти
+                        виникненню проблем, продовжити термін служби компонентів і підвищити ефективність вашого
+                        автомобіля
+                        з точки зору продуктивності, економії палива та викидів.</p>
+                </div>
             </div>
-        </div>
-        <div class="accordion-item">
-            <div class="accordion-header">
-                Що таке TerraClean?
-                <span class="accordion-icon">▼</span>
+            <div class="accordion-item" id="q3">
+                <div class="accordion-header">3. Як часто потрібно проводити очищення DPF? <span
+                        class="accordion-icon">▼</span></div>
+                <div class="accordion-content">
+                    <p>Рекомендовано проводити профілактику кожні <strong>80 000 – 120 000 км</strong> залежно від умов
+                        експлуатації.</p>
+                </div>
             </div>
-            <div class="accordion-content">
-                <p>TerraClean — це запатентована технологія очищення двигунів внутрішнього згоряння, яка зменшує
-                    відкладення вуглецю в системі впуску, камерах згоряння, каталізаторах і датчиках. Це покращує
-                    продуктивність, знижує викиди та покращує економію пального.</p>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    Чи може TerraClean очистити мою систему EGR і DPF?
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p> Якщо агрегат заблокований золою, яку не може видалити жодна сервісна служба, всі сервісні центри
+                        TerraClean мають доступ до технології, яка видаляє золу з агрегату. Ми рекомендуємо вам завжди
+                        спілкуватися в чаті з місцевим центром TerraClean. Якщо на несертифікованих СТО вам радять
+                        замінити
+                        блок DPF, ми вважаємо, що більшість з них можна очистити.
+                    <p> Ми надаємо технічну підготовку технічним фахівцям TerraClean. Ми також рекомендуємо вам не
+                        знімати
+                        сажовий фільтр назавжди, він є з якоїсь причини, а без сажового фільтра ваш автомобіль викидає
+                        шкідливі частинки в густонаселені райони.</p>
+                </div>
             </div>
-        </div>
-        <div class="accordion-item">
-            <div class="accordion-header">
-                Які переваги має TerraClean?
-                <span class="accordion-icon">▼</span>
+            <div class="accordion-item" id="q4">
+                <div class="accordion-header">4. Чи можна провести очищення без демонтажу DPF? <span
+                        class="accordion-icon">▼</span></div>
+                <div class="accordion-content">
+                    <p>Так, TerraClean дозволяє <strong>виконати очищення без розбирання</strong> — швидко, ефективно та
+                        без шкоди.</p>
+                </div>
             </div>
-            <div class="accordion-content">
-                <ul>
-                    <li>Покращена економія пального</li>
-                    <li>Менше викидів</li>
-                    <li>Краще прискорення та відгук дроселя</li>
-                    <li>Стабільніша робота двигуна</li>
-                </ul>
+            <div class="accordion-item" id="q5">
+                <div class="accordion-header">5. Чим TerraClean відрізняється від інших методів очищення? <span
+                        class="accordion-icon">▼</span></div>
+                <div class="accordion-content">
+                    <p>TerraClean — це <strong>запатентована система</strong>, яка усуває не лише наслідки, а й
+                        <strong>причини забруднення</strong>. Ми також проводимо <strong>повну діагностику</strong> для
+                        запобігання повторних проблем.
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="accordion-item">
-            <div class="accordion-header">
-                Чи підходить TerraClean для дизельних двигунів?
-                <span class="accordion-icon">▼</span>
-            </div>
-            <div class="accordion-content">
-                <p>Так. TerraClean має рішення як для бензинових, так і для дизельних двигунів. Для дизеля також
-                    очищуються системи EGR і DPF, якщо є достатній потік повітря. У разі сильного засмічення DPF
-                    застосовується окрема процедура очищення.</p>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <div class="accordion-header">
-                Що таке TerraClean?
-                <span class="accordion-icon">▼</span>
-            </div>
-            <div class="accordion-content">
-                <p>TerraClean — це запатентована технологія очищення двигунів внутрішнього згоряння, яка зменшує
-                    відкладення вуглецю в системі впуску, камерах згоряння, каталізаторах і датчиках. Це покращує
-                    продуктивність, знижує викиди та покращує економію пального.</p>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <div class="accordion-header">
-                Які переваги має TerraClean?
-                <span class="accordion-icon">▼</span>
-            </div>
-            <div class="accordion-content">
-                <ul>
-                    <li>Покращена економія пального</li>
-                    <li>Менше викидів</li>
-                    <li>Краще прискорення та відгук дроселя</li>
-                    <li>Стабільніша робота двигуна</li>
-                </ul>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <div class="accordion-header">
-                Чи підходить TerraClean для дизельних двигунів?
-                <span class="accordion-icon">▼</span>
-            </div>
-            <div class="accordion-content">
-                <p>Так. TerraClean має рішення як для бензинових, так і для дизельних двигунів. Для дизеля також
-                    очищуються системи EGR і DPF, якщо є достатній потік повітря. У разі сильного засмічення DPF
-                    застосовується окрема процедура очищення.</p>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    Коли моєму авто може знадобитися очищення продуктом TerraClean?
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Як правило, ми говоримо, що автомобіль підлягає очищенню TerraClean приблизно через 35-50 тис.
+                        км.
+                        Але якщо більша частина пробігу проводиться по місту, обслуговування може бути краще виконано
+                        при
+                        меншому пробігу, якщо більша частина пробігу виконується на швидкостях автомагістралі, тоді буде
+                        накопичуватися менше вуглецю, і обслуговування буде виконуватися при трохи більшому пробігу.</p>
+                </div>
             </div>
         </div>
     </div>
+
+    <section class="feature fade-in-section">
+        <div class="header-testimonials ">
+            <h2 class="feature__title" style="font-size: 2rem;">Відгуки наших клієнтів</h2>
+            <p class="feature__subtitle">Діагностика та очищення без розборки двигуна </p>
+        </div>
+
+        <div class="testimonial-container">
+            <div class="testimonial-grid">
+                <div class="image-container" id="image-container"></div>
+                <div class="testimonial-content">
+                    <div>
+                        <h3 class="name" id="name"></h3>
+                        <p class="designation" id="designation"></p>
+                        <p class="quote" id="quote"></p>
+                    </div>
+                    <div class="arrow-buttons">
+                        <button class="arrow-button prev-button" id="prev-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                            </svg>
+                        </button>
+                        <button class="arrow-button next-button" id="next-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="cta">
+                <h2>Ваше авто потребує обслуговування EGR, DPF, системи подачі палива?</h2>
+                <a href="/contact">Зв'язатись з нами</a>
+                <p>Професійне очищення та обслуговування з TerraClean — надійне рішення.</p>
+            </div>
+        </div>
+
+    </section>
+
+
 
     <footer class=" footer">
         <a href="#top" class="back-to-top" title="Back to top">↑</a>
@@ -359,6 +632,11 @@
     <script src="js/jquery.socialfloating.js"></script>
     <script src="js/socialfloating.js"></script>
     <script src="js/blogscript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/testimonials.js"></script>
+
+
     <!-- menu -->
     <script>
         // menu ------------
@@ -388,7 +666,7 @@
             lastScrollY = currentScrollY;
         });
     </script>
-
+    <!-- accordion -->
     <script>
         document.querySelectorAll(".accordion-header").forEach(header => {
             header.addEventListener("click", () => {
@@ -411,6 +689,26 @@
                     content.style.maxHeight = content.scrollHeight + "px";
                     header.classList.add("active");
                 }
+            });
+        });
+    </script>
+    <script>
+        // Fade-in effect for sections
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
             });
         });
     </script>
