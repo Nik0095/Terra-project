@@ -78,6 +78,7 @@
         .cta a {
             display: inline-block;
             margin-top: 15px;
+            margin-bottom: 25px;
             padding: 12px 25px;
             background: white;
             color: #667eea;
